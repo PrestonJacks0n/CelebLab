@@ -1,21 +1,26 @@
-import java.util.Scanner;
+
 
 public class Celebrity {
     private String name;
-    private String hint;
+    private String clue;
 
     public Celebrity() 
     {
     }
 
-    public Celebrity(String name) {
+    public Celebrity(String name, String guess) {
         this.name = name.trim().toLowerCase();
+        clue = guess;
     }
     public String getName() {
         return name;
     }
 
-    public String getHint() {
-        return hint;
+    public String getClue() {
+        return clue;
+    }
+
+    public void setClue(String hint) {
+        clue = hint;
     }
 }

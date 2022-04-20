@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 
+/** Jordan Morris did all the work, Preston Jackson is lame and definitely did not do anything lol jk
+ * Period 4
+ * 
+ */
 /**
  * The framework for the Celebrity Game project
  * 
@@ -54,7 +58,12 @@ public class CelebrityGame
     /* To be implemented */
 		if (guess.trim().equalsIgnoreCase(gameCelebrity.getName())) {
 			celebGameList.remove(0);
-			gameCelebrity = new Celebrity();
+			if (celebGameList.size() == 0) {
+				gameCelebrity = new Celebrity();
+			}
+			else {
+				gameCelebrity = celebGameList.get(0);
+			}
 			return true;
 		}
 		return false;
@@ -85,7 +94,7 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		celebGameList.add(new Celebrity(name));
+		celebGameList.add(new Celebrity(name, guess));
 	}
 
 	/**
@@ -131,6 +140,6 @@ public class CelebrityGame
 	{
     /* To be implemented */
 
-		return null;
+		return gameCelebrity.getClue();
 	}
 }
